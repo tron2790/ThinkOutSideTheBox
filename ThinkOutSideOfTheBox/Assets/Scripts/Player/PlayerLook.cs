@@ -32,6 +32,10 @@ public class PlayerLook : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (PauseMenu.isPuased)
+        {
+            return;
+        }
         MyInput();
 
         cam.localRotation = Quaternion.Euler(xRotation, yRotation, wallRun.tilt);

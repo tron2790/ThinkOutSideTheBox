@@ -31,10 +31,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform orientation;
     [SerializeField] private Transform groundCheck;
 
-    [Header("KeyBinds")]
-    [SerializeField] private KeyCode jumpKey = KeyCode.Space;
-    [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
-    [SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
+    
 
     [Header("Audio")]
     [SerializeField] private AudioClip[] footStepSounds;
@@ -47,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Sliding")]
     public float slideForce = 400;
+
+    private PlayerInput playerInput;
 
     [SerializeField] private Text velocityText;
     //Private variables
@@ -84,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         audioSource = GetComponent<AudioSource>();
@@ -103,6 +103,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenu.isPuased)
+        {
+            return;
+        }
+
+
         velocityText.text = rb.velocity.magnitude.ToString();
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundlayer);
 
@@ -110,12 +116,12 @@ public class PlayerMovement : MonoBehaviour
         ControlDrag();
         ControlSpeed();
 
-        if (Input.GetKeyDown(jumpKey) && isGrounded)
+        if (Input.GetKeyDown(playerInput.GetJump()) && isGrounded)
         {
             Jump();
             PlayJumpSound();
         }
-        if(Input.GetKeyDown(jumpKey) && doubleJump && !isGrounded && !wallRun.isWallRunning)
+        if(Input.GetKeyDown(playerInput.GetJump()) && doubleJump && !isGrounded && !wallRun.isWallRunning)
         {
             doubleJump = false;
             Jump();
@@ -130,9 +136,9 @@ public class PlayerMovement : MonoBehaviour
             doubleJump = true;
             PlayLandingSound();
         }
-        if (Input.GetKeyDown(crouchKey))
+        if (Input.GetKeyDown(playerInput.GetCrouch()))
             StartCrouch();
-        if (Input.GetKeyUp(crouchKey))
+        if (Input.GetKeyUp(playerInput.GetCrouch()))
             StopCrouch();
 
 
@@ -234,7 +240,7 @@ public class PlayerMovement : MonoBehaviour
     private void ControlSpeed()
     {
         //if(isSliding) { return; }
-        if(Input.GetKey(sprintKey) && isGrounded)
+        if(Input.GetKey(playerInput.GetSprint()) && isGrounded)
         {
             moveSpeed = Mathf.Lerp(moveSpeed, sprintSpeed, acceleration * Time.deltaTime);
             isWalking = false;

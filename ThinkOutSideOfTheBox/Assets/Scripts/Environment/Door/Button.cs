@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Button : MonoBehaviour
 {
-
-    [SerializeField] private Door door;
+    public UnityEvent onPressed, onReleased;
     [SerializeField] private float threshold = 0.1f;
     [SerializeField] private float deadzone = 0.025f;
     private bool isPressd;
@@ -44,12 +44,13 @@ public class Button : MonoBehaviour
     private void Pressed()
     {
         isPressd = true;
-        door.DoorOpen();
+        onPressed.Invoke();
     }
 
     private void Released()
     {
         isPressd = false;
-        door.DoorClose();
+        onReleased.Invoke();
+        
     }
 }
