@@ -61,6 +61,8 @@
     <Compile Include="Assets\Scripts\Player\Highlighter.cs" />
     <Compile Include="Assets\Scripts\Input\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\Environment\ViewerSquare\ViewerSquare.cs" />
+    <Compile Include="Assets\Scripts\Environment\Door\ExitDoor.cs" />
+    <Compile Include="Assets\Scripts\Environment\Door\Lever.cs" />
     <Compile Include="Assets\Scripts\Environment\Break\Shatter.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLook.cs" />
     <Compile Include="Assets\Scripts\Player\MoveCamera.cs" />
@@ -68,10 +70,12 @@
     <Compile Include="Assets\Scripts\Menus\PauseMenu\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Environment\Door\Button.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerPickupObject.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerInteraction.cs" />
     <Compile Include="Assets\Scripts\Player\wallRun.cs" />
     <Compile Include="Assets\Scripts\Environment\CameraModel\CameraModel.cs" />
     <Compile Include="Assets\Scripts\Environment\Door\Door.cs" />
+    <Compile Include="Assets\Scripts\Player\CheckPoint\CheckPoint.cs" />
+    <Compile Include="Assets\Scripts\Player\StageArea\Stage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

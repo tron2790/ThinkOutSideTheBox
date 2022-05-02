@@ -11,17 +11,17 @@ public class objectDetection : MonoBehaviour
     // Update is called once per frame
     RaycastHit hit;
     private Highlighter highlighter;
-    private PlayerPickupObject pickupObject;
+    private PlayerInteraction interaction;
     private void Awake()
     {
         highlighter = GetComponent<Highlighter>();
-        pickupObject = GetComponent<PlayerPickupObject>();
+        interaction = GetComponent<PlayerInteraction>();
     }
 
     void Update()
     {
         
-        if (currentLookAtObj == null || pickupObject.isPicked())
+        if (currentLookAtObj == null || interaction.isPicked())
         {
             highlighter.StopInfo();
         }
@@ -37,10 +37,10 @@ public class objectDetection : MonoBehaviour
                 crosshair.color = new Color(crosshair.color.r, crosshair.color.g, crosshair.color.b, 1f);
                 hit.transform.gameObject.GetComponent<Outline>().enabled = true;
                 currentLookAtObj = hit.transform.gameObject;
-                pickupObject.PickupObj(currentLookAtObj);
+                interaction.PickupObj(currentLookAtObj);
 
-                if (!pickupObject.isPicked()){
-                    highlighter.StartInfo($"Press: {pickupObject.GetValueKey()}");
+                if (!interaction.isPicked()){
+                    highlighter.StartInfo($"Press: {interaction.GetValueKey()}");
                 }
 
             }
@@ -50,6 +50,15 @@ public class objectDetection : MonoBehaviour
                 hit.transform.gameObject.GetComponent<Outline>().enabled = true;
                 currentLookAtObj = hit.transform.gameObject;
                 Debug.DrawLine(cam.transform.position, hit.transform.position, Color.green);
+            }else if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Lever"))
+            {
+                crosshair.color = new Color(crosshair.color.r, crosshair.color.g, crosshair.color.b, 1f);
+                hit.transform.gameObject.GetComponent<Outline>().enabled = true;
+                currentLookAtObj = hit.transform.gameObject;
+                Debug.DrawLine(cam.transform.position, hit.transform.position, Color.green);
+                interaction.InteractWithLever(hit.transform.gameObject);
+                highlighter.StartInfo($"Press: {interaction.GetValueKey()}");
+
             }
             else
             {

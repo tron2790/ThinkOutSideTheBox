@@ -5,7 +5,7 @@ using UnityEngine;
 public class CreateSound : MonoBehaviour
 {
     private AudioSource audioSource;
-    [SerializeField] private AudioClip sfx;
+    [SerializeField] private AudioClip[] sfx;
     [SerializeField] private LayerMask layerMask;
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,8 @@ public class CreateSound : MonoBehaviour
 
     private void PlayClip()
     {
-        audioSource.clip = sfx;
+        int rand = Random.Range(0, sfx.Length);
+        audioSource.clip = sfx[rand];
         audioSource.Play();
     }
 
@@ -23,9 +24,9 @@ public class CreateSound : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("col");
-       
+        
             PlayClip();
+        
         
     }
 }

@@ -111,7 +111,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2b819cb91c8404987e5a212f6ad887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfx: {fileID: 0}
+  sfx:
+  - {fileID: 8300000, guid: dbf7ddd8542b74e41b5a62b6630375c7, type: 3}
+  - {fileID: 8300000, guid: 0153deccfeaf0a641ac08608d25314ec, type: 3}
+  - {fileID: 8300000, guid: e33e83c016130e940a449662fd529ccb, type: 3}
+  - {fileID: 8300000, guid: 64256da0c4a54ea4997db10d77cacaa4, type: 3}
+  - {fileID: 8300000, guid: 1469cf473367daf40b9c7c1b364705dd, type: 3}
+  - {fileID: 8300000, guid: b4fb3e2c5eb8817499e37ac6d9d08cce, type: 3}
+  - {fileID: 8300000, guid: 7e590f68a188df3498c83379d12f1ed8, type: 3}
+  - {fileID: 8300000, guid: b73f400f1fb44964297ffe372f42f433, type: 3}
+  - {fileID: 8300000, guid: fb30f9f23c0724a4e84e4ce17c01180f, type: 3}
+  - {fileID: 8300000, guid: f9b353da3466d0745a86cb19093c3ded, type: 3}
+  - {fileID: 8300000, guid: 90a960c9d513d9d4fa9738c5b045fd83, type: 3}
+  - {fileID: 8300000, guid: cfe1168023d20d8498b2b8043e006296, type: 3}
+  - {fileID: 8300000, guid: 626094d9143972748b7be4dc56852fec, type: 3}
+  - {fileID: 8300000, guid: 57a5ee73b3135784c962863db58c5573, type: 3}
+  - {fileID: 8300000, guid: 787b8374f682f85469aa97fe3b0a5b60, type: 3}
+  - {fileID: 8300000, guid: ffdbab86df7d2244a85a4279c2e51444, type: 3}
+  - {fileID: 8300000, guid: a72a81a974447b743a5622e28923d95d, type: 3}
+  - {fileID: 8300000, guid: b04713526b552f644af25a0c906b56a9, type: 3}
+  - {fileID: 8300000, guid: 5fbf2c7faccf67e4f95e350d2ac8d489, type: 3}
+  - {fileID: 8300000, guid: 0747ec20f7628414c88f1f88209912ea, type: 3}
+  - {fileID: 8300000, guid: 715a2b34b171faa44a97dc94cef72be9, type: 3}
+  - {fileID: 8300000, guid: c41f6adef1d158f4eb36e01eb9898820, type: 3}
+  - {fileID: 8300000, guid: ddd3752694904e64baebc43e49e810a9, type: 3}
   layerMask:
     serializedVersion: 2
     m_Bits: 192
@@ -169,7 +192,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 3.8004723
+  MinDistance: 1.4201674
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -235,7 +258,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 1.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

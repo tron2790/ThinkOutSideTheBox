@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     [Header("Input for Keybinds")]
-    [SerializeField] private KeyCode Pickup = KeyCode.E;
+    [SerializeField] private KeyCode interactKey = KeyCode.E;
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
     [SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
@@ -16,9 +16,9 @@ public class PlayerInput : MonoBehaviour
         return jumpKey;
     }
 
-    public KeyCode GetPickup()
+    public KeyCode GetInteraction()
     {
-        return Pickup;
+        return interactKey;
     }
     public KeyCode GetSprint()
     {

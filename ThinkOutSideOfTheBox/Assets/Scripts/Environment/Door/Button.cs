@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 public class Button : MonoBehaviour
 {
+    [SerializeField] private AudioClip[] onReleasedClips;
+    [SerializeField] private AudioClip[] onPressedClips;
+    private AudioSource audioSource;
     public UnityEvent onPressed, onReleased;
     [SerializeField] private float threshold = 0.1f;
     [SerializeField] private float deadzone = 0.025f;
@@ -14,9 +17,24 @@ public class Button : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         startPos = transform.localPosition;
         joint = GetComponent<ConfigurableJoint>();
     }
+    private void PlayReleasedClip()
+    {
+        int rand = Random.Range(0, onReleasedClips.Length);
+        Debug.Log(rand);
+        audioSource.clip = onReleasedClips[rand];
+        audioSource.Play();
+    }
+    private void PlayPressedClip()
+    {
+        int rand = Random.Range(0, onPressedClips.Length);
+        audioSource.clip = onPressedClips[rand];
+        audioSource.Play();
+    }
+
     private void Update()
     {
         if(!isPressd && GetValue() + threshold >= 1)
@@ -44,12 +62,14 @@ public class Button : MonoBehaviour
     private void Pressed()
     {
         isPressd = true;
+        PlayPressedClip();
         onPressed.Invoke();
     }
 
     private void Released()
     {
         isPressd = false;
+        PlayReleasedClip();
         onReleased.Invoke();
         
     }
