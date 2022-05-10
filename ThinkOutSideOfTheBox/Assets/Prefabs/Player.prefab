@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1242193444}
   - component: {fileID: 175151470}
   - component: {fileID: 175151479}
+  - component: {fileID: 2070113696}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -296,6 +297,20 @@ MonoBehaviour:
   jumpKey: 32
   sprintKey: 304
   crouchKey: 306
+--- !u!114 &2070113696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5878750844961454885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e407f1b39958e84d89946af4706cebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  respawnTimer: 2
 --- !u!1 &5878750845078674896
 GameObject:
   m_ObjectHideFlags: 0

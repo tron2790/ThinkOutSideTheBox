@@ -6,10 +6,25 @@ public class Stage : MonoBehaviour
 {
     [SerializeField] private GameObject[] Stages;
     public GameObject currentStage;
-
-    public void setCurrentStage(int _Stage)
+    private int _Stage = 0;
+    private void Start()
     {
+        currentStage = Stages[0];
+    }
+
+    public void setCurrentStage()
+    {
+        
+
+        _Stage++;
+
         currentStage = Stages[_Stage];
+    }
+
+    public CheckPoint getCurrentStageCheckpoint()
+    {
+        CheckPoint cp = currentStage.GetComponentInChildren<CheckPoint>();
+        return cp;
     }
 
 
