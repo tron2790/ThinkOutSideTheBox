@@ -8,6 +8,8 @@ public class CameraModel : MonoBehaviour
     private Transform Pos;
     [SerializeField] private GameObject player;
     [SerializeField] private Transform cameraHead;
+    [SerializeField] private GameObject vCam;
+    [SerializeField] private GameObject vCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,25 @@ public class CameraModel : MonoBehaviour
 
         cameraHead.LookAt(player.transform);
     }
+
+    public void EnableCamera()
+    {
+        vCam.SetActive(true);
+        vCanvas.SetActive(true);
+    }
+
+    public void DisableCamera()
+    {
+        vCam.SetActive(false);
+        vCanvas.SetActive(false);
+    }
+
+    public void playQoute()
+    {
+        GetComponent<DeathQoutes>().PlayQoute();
+    }
+
+
 
 
 

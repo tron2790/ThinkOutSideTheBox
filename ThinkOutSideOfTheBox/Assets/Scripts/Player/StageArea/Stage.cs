@@ -27,6 +27,11 @@ public class Stage : MonoBehaviour
         return cp;
     }
 
+    public CameraModel getCurrentStageCameraModel()
+    {
+        CameraModel cm = currentStage.GetComponentInChildren<CameraModel>();
+        return cm;
+    }
 
 
 }

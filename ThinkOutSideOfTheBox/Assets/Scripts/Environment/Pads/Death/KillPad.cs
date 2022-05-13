@@ -9,7 +9,7 @@ public class KillPad : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Debug.Log("Hit");
-            collision.gameObject.GetComponent<PlayerHealth>().instantKill();
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(100f);
         }
     }
 }
