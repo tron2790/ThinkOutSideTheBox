@@ -87,6 +87,9 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         audioSource = GetComponent<AudioSource>();
+
+        DataPresistanceManager.Instance.LevelLoaded();
+        DataPresistanceManager.Instance.LoadGame();
     }
 
     private void ControlDrag()

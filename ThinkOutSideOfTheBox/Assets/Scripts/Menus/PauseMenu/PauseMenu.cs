@@ -52,18 +52,19 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitSave()
     {
-        Save();
+        
         Application.Quit();
     }
 
     public void Save()
     {
-        
-        // code for save later
+
+        DataPresistanceManager.Instance.SaveGame();
     }
 
     public void MainMenu()
     {
+        Save();
         LevelManager.Instance.LoadScene("MainMenu");
     }
 

@@ -71,19 +71,24 @@
     <Compile Include="Assets\Scripts\Player\objectDetection.cs" />
     <Compile Include="Assets\Scripts\Menus\PauseMenu\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\DataPresistance\FileDataHandler.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\LevelManagemnt\ButtonLoader.cs" />
     <Compile Include="Assets\Scripts\Player\CheckPoint\CheckPoint.cs" />
+    <Compile Include="Assets\Scripts\DataPresistance\DataPresistanceManager.cs" />
     <Compile Include="Assets\Scripts\Environment\Door\Button.cs" />
     <Compile Include="Assets\Scripts\Environment\MainCamera\MainMenu\CameraSettings.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInteraction.cs" />
     <Compile Include="Assets\Scripts\Player\wallRun.cs" />
     <Compile Include="Assets\Scripts\LevelManagemnt\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\DataPresistance\IDataPersistance.cs" />
     <Compile Include="Assets\Scripts\Environment\CameraModel\CameraModel.cs" />
     <Compile Include="Assets\Scripts\Environment\Door\Door.cs" />
+    <Compile Include="Assets\Scripts\DataPresistance\Data\GameData.cs" />
     <Compile Include="Assets\Scripts\Player\StageArea\Stage.cs" />
-    <Compile Include="Assets\Scripts\Environment\Pads\Death\KillPad.cs" />
     <Compile Include="Assets\Scripts\Environment\CameraModel\DeathQoutes.cs" />
+    <Compile Include="Assets\Scripts\Environment\Pads\Death\KillPad.cs" />
+    <Compile Include="Assets\Scripts\Menus\SaveSelect\LoadSaveSelect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

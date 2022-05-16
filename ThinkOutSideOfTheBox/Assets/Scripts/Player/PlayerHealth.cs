@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IDataPersistance
 {
     [SerializeField] private float health = 100f;
     [SerializeField] private float respawnTimer = 2f;
@@ -18,7 +18,10 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CurrentHealth = health;
+
+
+
+        //CurrentHealth = health;
     }
 
     // Update is called once per frame
@@ -108,5 +111,15 @@ public class PlayerHealth : MonoBehaviour
         CameraModel cm = FindObjectOfType<Stage>().getCurrentStageCameraModel();
         cm.DisableCamera();
         isDead = false;
+    }
+
+    public void LoadData(GameData data)
+    {
+        this.CurrentHealth = data.health;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.health = this.CurrentHealth;
     }
 }

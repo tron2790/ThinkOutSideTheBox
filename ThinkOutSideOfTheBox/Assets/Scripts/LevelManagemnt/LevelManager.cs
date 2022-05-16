@@ -38,10 +38,13 @@ public class LevelManager : MonoBehaviour
             await System.Threading.Tasks.Task.Delay(100);
             target = scene.progress;
         } while (scene.progress < 0.9f);
+        
         await System.Threading.Tasks.Task.Delay(1000);
         scene.allowSceneActivation = true;
+       
         loaderCanvas.SetActive(false);
         Time.timeScale = 1f;
+
 
     }
 
