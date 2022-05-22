@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Player\Highlighter.cs" />
     <Compile Include="Assets\Scripts\Environment\Pads\Finsih\FinishPad.cs" />
     <Compile Include="Assets\Scripts\Input\PlayerInput.cs" />
+    <Compile Include="Assets\Scripts\AI\AI.cs" />
     <Compile Include="Assets\Scripts\Environment\ViewerSquare\ViewerSquare.cs" />
     <Compile Include="Assets\Scripts\Environment\Door\ExitDoor.cs" />
     <Compile Include="Assets\Scripts\Environment\Door\Lever.cs" />
@@ -80,8 +81,10 @@
     <Compile Include="Assets\Scripts\Environment\Door\PressedButton.cs" />
     <Compile Include="Assets\Scripts\Environment\MainCamera\MainMenu\CameraSettings.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInteraction.cs" />
+    <Compile Include="Assets\Scripts\AI\AI360Degree.cs" />
     <Compile Include="Assets\Scripts\Player\wallRun.cs" />
     <Compile Include="Assets\Scripts\LevelManagemnt\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\AI\AI_45_Degree.cs" />
     <Compile Include="Assets\Scripts\DataPresistance\IDataPersistance.cs" />
     <Compile Include="Assets\Scripts\Environment\CameraModel\CameraModel.cs" />
     <Compile Include="Assets\Scripts\Environment\Door\Door.cs" />

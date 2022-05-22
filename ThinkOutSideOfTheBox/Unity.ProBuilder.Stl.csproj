@@ -57,9 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.2\External\StlExporter\Code\pb_Stl.cs" />
-    <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.2\External\StlExporter\Code\pb_Stl_Importer.cs" />
-    <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.2\External\StlExporter\Code\pb_Stl_Exporter.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.2\External\StlExporter\AssemblyInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.2\External\StlExporter\Code\pb_Stl_Exporter.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.2\External\StlExporter\Code\pb_Stl_Importer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library\PackageCache\com.unity.probuilder@4.5.2\External\StlExporter\Unity.ProBuilder.Stl.asmdef" />
@@ -307,6 +307,9 @@
     </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.12\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>Library\PackageCache\com.unity.render-pipelines.core@10.8.1\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>

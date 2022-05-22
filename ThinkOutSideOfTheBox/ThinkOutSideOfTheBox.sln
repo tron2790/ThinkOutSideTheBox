@@ -1,10 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-<<<<<<< HEAD
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{23A4C987-AF46-00E3-0F4A-0B09B1620102}"
-EndProject
-=======
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI", "UnityEngine.UI.csproj", "{7874682D-F173-386C-61EA-58CBDCE842EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.Core.Runtime", "Unity.RenderPipelines.Core.Runtime.csproj", "{62E02354-66CD-C423-AF64-0F76587DB28F}"
@@ -121,15 +117,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.Unive
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary", "Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player.csproj", "{7DB49162-D7B5-541B-7304-E81D8D7C96FF}"
 EndProject
->>>>>>> Jason_BranchV2
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-<<<<<<< HEAD
-=======
 		{7874682D-F173-386C-61EA-58CBDCE842EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7874682D-F173-386C-61EA-58CBDCE842EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7874682D-F173-386C-61EA-58CBDCE842EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -146,13 +139,10 @@ Global
 		{F57AB7B1-83DF-896D-C071-762921B050A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F57AB7B1-83DF-896D-C071-762921B050A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F57AB7B1-83DF-896D-C071-762921B050A7}.Release|Any CPU.Build.0 = Release|Any CPU
->>>>>>> Jason_BranchV2
 		{23A4C987-AF46-00E3-0F4A-0B09B1620102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{23A4C987-AF46-00E3-0F4A-0B09B1620102}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23A4C987-AF46-00E3-0F4A-0B09B1620102}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23A4C987-AF46-00E3-0F4A-0B09B1620102}.Release|Any CPU.Build.0 = Release|Any CPU
-<<<<<<< HEAD
-=======
 		{BB308923-2D8B-2CF2-3C04-9AB8C9FDB7D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BB308923-2D8B-2CF2-3C04-9AB8C9FDB7D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB308923-2D8B-2CF2-3C04-9AB8C9FDB7D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -365,7 +355,6 @@ Global
 		{7DB49162-D7B5-541B-7304-E81D8D7C96FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DB49162-D7B5-541B-7304-E81D8D7C96FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DB49162-D7B5-541B-7304-E81D8D7C96FF}.Release|Any CPU.Build.0 = Release|Any CPU
->>>>>>> Jason_BranchV2
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

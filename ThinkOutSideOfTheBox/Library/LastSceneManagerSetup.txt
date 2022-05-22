@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Prototype_Togo.unity
+- path: Assets/Scenes/Prototype_Jason.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
