@@ -11,12 +11,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Walkable
+  - Pickup
+  - PostProcessing
+  - Button
+  - Lever
   - 
   - 
   - 
