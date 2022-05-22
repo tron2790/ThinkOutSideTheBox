@@ -6,9 +6,9 @@ using System;
 
 public class DataPresistanceManager : MonoBehaviour
 {
-    [Header("File Storage Config")]
-    [SerializeField] private string fileName;
 
+
+   
 
 
     private GameData gameData;
@@ -16,7 +16,7 @@ public class DataPresistanceManager : MonoBehaviour
     private FileDataHandler dataHandler;
     public static DataPresistanceManager Instance { get; private set; }
 
-
+    private bool GameDataLoaded;
     private void Awake()
     {
         if(Instance == null)
@@ -34,8 +34,11 @@ public class DataPresistanceManager : MonoBehaviour
 
     private void Start()
     {
+        string localDate = DateTime.UtcNow.ToString("MM_dd_yyyy");
+        string localTIme = DateTime.Now.ToString("HH_mm_ss_tt");
+        string fileName = "Save" + localDate + localTIme + ".game";
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
-       // LevelLoaded();
+        LevelLoaded();
        // LoadGame();
     }
     public void LevelLoaded()
@@ -58,17 +61,32 @@ public class DataPresistanceManager : MonoBehaviour
 
     public string[] LoadFileNames()
     {
-        return dataHandler.FindSaveData();
+        return this.dataHandler.FindSaveData();
 
         
     }
-
+  
+    public void loadNameSave(string filename)
+    {
+        this.gameData = dataHandler.LoadFile(filename);
+        if(this.gameData == null)
+        {
+            Debug.LogError("Error No Game Data was Found!");
+        }
+        foreach (IDataPersistance dataPersistanceObj in dataPersistancesObjects)
+        {
+            dataPersistanceObj.LoadData(gameData);
+        }
+        GameDataLoaded = true;
+    }
 
     public void LoadGame()
     {
-        this.gameData = dataHandler.Load();
+        if (GameDataLoaded == false)
+        {
+            this.gameData = dataHandler.Load();
 
-
+        }
         if(this.gameData == null)
         {
             Debug.Log("No Data was found. Initiazing data to defaults.");
@@ -99,7 +117,7 @@ public class DataPresistanceManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        SaveGame();
+      //  SaveGame();
     }
 
 }

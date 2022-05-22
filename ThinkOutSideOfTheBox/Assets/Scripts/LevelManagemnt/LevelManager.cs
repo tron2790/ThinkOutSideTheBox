@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class LevelManager : MonoBehaviour
+public class LevelManager : MonoBehaviour, IDataPersistance
 {
     public static LevelManager Instance;
 
@@ -44,12 +44,26 @@ public class LevelManager : MonoBehaviour
        
         loaderCanvas.SetActive(false);
         Time.timeScale = 1f;
-
+       
 
     }
 
     private void Update()
     {
         progressBar.value = Mathf.MoveTowards(progressBar.value, target, 3 * Time.deltaTime);
+    }
+
+    public void LoadData(GameData data)
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            LoadScene(data.CurrentSceneName);
+
+        }
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.CurrentSceneName = SceneManager.GetActiveScene().name;
     }
 }

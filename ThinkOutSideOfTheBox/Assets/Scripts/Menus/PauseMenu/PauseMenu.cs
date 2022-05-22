@@ -64,7 +64,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
-        Save();
+        
         LevelManager.Instance.LoadScene("MainMenu");
     }
 

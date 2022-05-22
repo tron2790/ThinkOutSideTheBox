@@ -13,7 +13,33 @@ public class FileDataHandler
         this.dataDirPath = dataDirPath;
         this.dataFileName = dataFileName;
     }
+    public GameData LoadFile(string filename)
+    {
+        string fullPath = Path.Combine(dataDirPath, filename);
+        GameData loadedData = null;
+        if (File.Exists(fullPath))
+        {
+            try
+            {
+                string dataToLoad = "";
+                using (FileStream stream = new FileStream(fullPath, FileMode.Open))
+                {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        dataToLoad = reader.ReadToEnd();
+                    }
+                }
 
+                loadedData = JsonUtility.FromJson<GameData>(dataToLoad);
+
+            }
+            catch (Exception e)
+            {
+                Debug.Log("Error occured when trying to load data from file: " + fullPath + "\n" + e);
+            }
+        }
+        return loadedData;
+    }
     public GameData Load()
     {
         string fullPath = Path.Combine(dataDirPath, dataFileName);
@@ -43,15 +69,19 @@ public class FileDataHandler
 
     public string[] FindSaveData()
     {
-        string path = Path.GetDirectoryName(dataDirPath);
-
-        if (File.Exists(path))
+        string fullPath = Path.GetFullPath(dataDirPath);
+        string[] files = Directory.GetFiles(fullPath, "*.game");
+        
+        for (int i = 0; i < files.Length; i++)
         {
-            string[] files = Directory.GetFiles(path, "*.Game");
-            return files;
+           string shortenPath = files[i].Replace(fullPath, "");
+           string newshortenPath = shortenPath.Replace(@"\", "");
+            files[i] = newshortenPath;
         }
+        return files;
+        
 
-        return null;
+        
        
     }
 
