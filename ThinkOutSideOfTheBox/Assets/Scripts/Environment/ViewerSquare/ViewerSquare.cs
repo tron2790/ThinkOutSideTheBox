@@ -8,6 +8,14 @@ public class ViewerSquare : MonoBehaviour
     [SerializeField] private AudioClip[] Lines;
     private AudioSource audioSource;
     int CurrentLinesIndex;
+    private bool isStarted;
+
+
+    public void SetStarted(bool _bool)
+    {
+        isStarted = _bool;
+    }
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -23,14 +31,17 @@ public class ViewerSquare : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!audioSource.isPlaying && CurrentLinesIndex != Lines.Length)
+        if (isStarted)
         {
-            
+            if (!audioSource.isPlaying && CurrentLinesIndex != Lines.Length)
+            {
+
                 audioSource.clip = Lines[CurrentLinesIndex];
                 audioSource.Play();
-            
-           
-            CurrentLinesIndex++;
+
+
+                CurrentLinesIndex++;
+            }
         }
     }
 }

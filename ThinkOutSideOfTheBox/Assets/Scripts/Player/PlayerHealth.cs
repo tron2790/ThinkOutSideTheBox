@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour, IDataPersistance
 
 
 
-        //CurrentHealth = health;
+        CurrentHealth = health;
     }
 
     // Update is called once per frame

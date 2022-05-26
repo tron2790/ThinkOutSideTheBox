@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Environment\Door\Lever.cs" />
     <Compile Include="Assets\Scripts\Environment\Break\Shatter.cs" />
     <Compile Include="Assets\Scripts\Environment\Door\Lightindicator.cs" />
+    <Compile Include="Assets\Scripts\Environment\Lift\StartingLift.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLook.cs" />
     <Compile Include="Assets\Scripts\Player\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\Player\objectDetection.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Assets\Scripts\Player\StageArea\Stage.cs" />
     <Compile Include="Assets\Scripts\Environment\CameraModel\DeathQoutes.cs" />
     <Compile Include="Assets\Scripts\Environment\Pads\Death\KillPad.cs" />
+    <Compile Include="Assets\Scripts\Environment\Door\JumpDown.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
