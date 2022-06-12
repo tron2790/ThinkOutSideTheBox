@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class JumpDown : MonoBehaviour
 {
-    
-    [SerializeField] private Door door;
+    public UnityEvent onOpen;
+   
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            door.DoorOpen();
+            onOpen.Invoke();
         }
     }
 }

@@ -12,7 +12,7 @@ public class Door : MonoBehaviour
     [SerializeField] private int counter;
     private Animator animator;
     private bool isDoorClosedTriggered;
-
+    [SerializeField] private bool isDoorOpen;
 
 
 
@@ -26,6 +26,14 @@ public class Door : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        if (isDoorOpen)
+        {
+            DoorOpen();
+        }
     }
 
 
